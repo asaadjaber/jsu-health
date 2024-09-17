@@ -72,7 +72,6 @@
 		4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCardViewModel.swift; sourceTree = "<group>"; };
 		4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		4EECBAC12C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSUHealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4EECBAC32C998D7500335FF4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +103,6 @@
 		4EECBA722C98142100335FF4 = {
 			isa = PBXGroup;
 			children = (
-				4EECBAC32C998D7500335FF4 /* README.md */,
 				4EECBA7D2C98142100335FF4 /* JSUHealth */,
 				4EECBA942C98142400335FF4 /* JSUHealthTests */,
 				4EECBA9E2C98142400335FF4 /* JSUHealthUITests */,
