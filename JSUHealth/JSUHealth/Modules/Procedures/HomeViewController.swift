@@ -28,17 +28,17 @@ extension HomeViewController {
         let layout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.66),
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                   heightDimension: .fractionalHeight(1.0))
                         
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.66),
                                                    heightDimension: .absolute(350))
             
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                            subitems: [item])
-            
+                        
             let section = NSCollectionLayoutSection(group: group)
             
             section.orthogonalScrollingBehavior = .continuous
@@ -63,7 +63,19 @@ extension HomeViewController {
     func configureDataSource() {
         
         let cellRegistration = UICollectionView.CellRegistration<ProcedureCell, ProcedureCard> { [self] (cell, indexPath, item) in
-            cell.setUp(with: procedureViewModel.procedures[indexPath.row])
+            let procedureCard = procedureViewModel.procedures[indexPath.row]
+            cell.setUp(with: procedureCard)
+            Task {
+                let (data, response) = await procedureViewModel.makeImageQuery(query: procedureCard.imageName)
+                if (response as? HTTPURLResponse)?.statusCode == 200 {
+                    if let data = data {
+                        cell.imageView.image = UIImage(data: data)
+                    }
+                } else {
+                    let statusCode = (response as? HTTPURLResponse)?.statusCode
+                    print("error fetching data, response: \(statusCode)")
+                }
+            }
         }
         
         dataSource = UICollectionViewDiffableDataSource<Int, ProcedureCard>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
@@ -76,7 +88,7 @@ extension HomeViewController {
         dataSource.apply(snapshot, animatingDifferences: false)
         
         //
-        var procedureCards = procedureViewModel.procedures
+        let procedureCards = procedureViewModel.procedures
         var procedureSnapshot = NSDiffableDataSourceSectionSnapshot<ProcedureCard>()
         procedureSnapshot.append(procedureCards)
         dataSource.apply(procedureSnapshot, to: 0, animatingDifferences: false)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class ProcedureCardViewModel {
     
@@ -20,4 +21,22 @@ class ProcedureCardViewModel {
         ProcedureCard(id: UUID().uuidString, imageName: "orthopedics", price: 1000, procedures: ["limb lengthening surgery", "carpal tunnel surgery", "hip replacement"])
     ]
     
+    let photoProvider = PhotoProvider()
+    
+    func makeImageQuery(query: String) async -> (Data?, URLResponse?) {
+        let (data, response) = await photoProvider.request(from: photoProvider.makeURLRequest(query: query))
+        guard let data = data else { return (nil, response) }
+        let decoder = JSONDecoder()
+        do {
+            let result = try decoder.decode(Body.self, from: data).results
+            let photoURL = result[0].user.profileImage.large
+            print("photoURL,", photoURL)
+            let (data, response) = await photoProvider.downloadImage(url: photoURL)
+            return (data, response)
+        } catch {
+            print("error decoding data")
+        }
+        
+       return (nil, nil)
+    }
 }

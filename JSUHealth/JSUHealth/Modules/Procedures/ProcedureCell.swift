@@ -11,6 +11,7 @@ import SnapKit
 
 class ProcedureCell: UICollectionViewCell {
     let priceLabel = UILabel()
+    let imageView = UIImageView()
     var proceduresLabelCollectionView: UICollectionView!
     
     static let reuseIdentifier = "procedure-cell-reuse-identifier"
@@ -32,13 +33,26 @@ class ProcedureCell: UICollectionViewCell {
 
 extension ProcedureCell {
     func configure() {
+        
+        imageView.contentMode = .scaleAspectFill
+        contentView.addSubview(imageView)
         contentView.addSubview(priceLabel)
+        contentView.layer.cornerRadius = 20
+        
         priceLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         let inset = CGFloat(10)
+        
+        NSLayoutConstraint.activate([
+            
+        ])
         
         priceLabel.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(inset)
             make.right.equalTo(contentView).offset(-inset)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.edges.equalTo(contentView)
         }
     }
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3DA7952C9AE50E005B12F7 /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7942C9AE50E005B12F7 /* Schema.swift */; };
+		4E3DA7972C9AE973005B12F7 /* PhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7962C9AE973005B12F7 /* PhotoProvider.swift */; };
+		4E3DA7992C9AF1BB005B12F7 /* GetPhotoRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7982C9AF1BB005B12F7 /* GetPhotoRequestTests.swift */; };
+		4E3DA79B2C9B06E9005B12F7 /* MockPhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA79A2C9B06E9005B12F7 /* MockPhotoProvider.swift */; };
+		4E3DA79D2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */; };
+		4E3DA79E2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */; };
 		4EECBA7F2C98142100335FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA7E2C98142100335FF4 /* AppDelegate.swift */; };
 		4EECBA812C98142100335FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA802C98142100335FF4 /* SceneDelegate.swift */; };
 		4EECBA832C98142100335FF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA822C98142100335FF4 /* HomeViewController.swift */; };
@@ -55,6 +61,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E3DA7942C9AE50E005B12F7 /* Schema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schema.swift; sourceTree = "<group>"; };
+		4E3DA7962C9AE973005B12F7 /* PhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProvider.swift; sourceTree = "<group>"; };
+		4E3DA7982C9AF1BB005B12F7 /* GetPhotoRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoRequestTests.swift; sourceTree = "<group>"; };
+		4E3DA79A2C9B06E9005B12F7 /* MockPhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoProvider.swift; sourceTree = "<group>"; };
+		4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
 		4EECBA7B2C98142100335FF4 /* JSUHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSUHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EECBA7E2C98142100335FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EECBA802C98142100335FF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EECBABE2C984B8700335FF4 /* SnapKit.xcframework in Frameworks */,
+				4E3DA79D2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3DA79E2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3DA7932C9AE4FF005B12F7 /* Unsplash */ = {
+			isa = PBXGroup;
+			children = (
+				4E3DA7942C9AE50E005B12F7 /* Schema.swift */,
+				4E3DA7962C9AE973005B12F7 /* PhotoProvider.swift */,
+			);
+			path = Unsplash;
+			sourceTree = "<group>";
+		};
 		4EECBA722C98142100335FF4 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +151,7 @@
 				4EECBA802C98142100335FF4 /* SceneDelegate.swift */,
 				4EECBAB42C9824B800335FF4 /* Modules */,
 				4EECBAB32C981A4F00335FF4 /* Model */,
+				4E3DA7932C9AE4FF005B12F7 /* Unsplash */,
 				4EECBA872C98142400335FF4 /* Assets.xcassets */,
 				4EECBA892C98142400335FF4 /* LaunchScreen.storyboard */,
 				4EECBA8C2C98142400335FF4 /* Info.plist */,
@@ -139,7 +162,9 @@
 		4EECBA942C98142400335FF4 /* JSUHealthTests */ = {
 			isa = PBXGroup;
 			children = (
+				4E3DA79A2C9B06E9005B12F7 /* MockPhotoProvider.swift */,
 				4EECBA952C98142400335FF4 /* ProcedureCardViewModelTests.swift */,
+				4E3DA7982C9AF1BB005B12F7 /* GetPhotoRequestTests.swift */,
 			);
 			path = JSUHealthTests;
 			sourceTree = "<group>";
@@ -191,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */,
+				4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,6 +352,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3DA7952C9AE50E005B12F7 /* Schema.swift in Sources */,
+				4E3DA7972C9AE973005B12F7 /* PhotoProvider.swift in Sources */,
 				4EECBABB2C98479C00335FF4 /* ProcedureCardViewModel.swift in Sources */,
 				4EECBAB02C98147B00335FF4 /* AppCoordinator.swift in Sources */,
 				4EECBAB72C9824CF00335FF4 /* ProcedureCell.swift in Sources */,
@@ -341,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EECBA962C98142400335FF4 /* ProcedureCardViewModelTests.swift in Sources */,
+				4E3DA79B2C9B06E9005B12F7 /* MockPhotoProvider.swift in Sources */,
+				4E3DA7992C9AF1BB005B12F7 /* GetPhotoRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
