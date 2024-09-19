@@ -35,6 +35,7 @@ extension ProcedureCell {
     func configure() {
         
         imageView.contentMode = .scaleAspectFill
+        
         contentView.addSubview(imageView)
         contentView.addSubview(priceLabel)
         contentView.layer.cornerRadius = 20

@@ -20,7 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let viewController = HomeViewController()
+        let clinicViewModel = ClinicCardViewModel()
+
         viewController.procedureViewModel = ProcedureCardViewModel()
+        viewController.clinicViewModel = clinicViewModel
         
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.navigationBar.backgroundColor = .systemBackground

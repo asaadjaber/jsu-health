@@ -71,6 +71,23 @@ struct PhotoProvider: RequestProvider, ImageProvider {
         return request
     }
     
+    func makeImageQuery(query: String) async -> (Data?, URLResponse?) {
+        let (data, response) = await request(from: makeURLRequest(query: query))
+        guard let data = data else { return (nil, response) }
+        let decoder = JSONDecoder()
+        do {
+            let result = try decoder.decode(Body.self, from: data).results
+            let photoURL = result[0].user.profileImage.large
+            print("photoURL,", photoURL)
+            let (data, response) = await downloadImage(url: photoURL)
+            return (data, response)
+        } catch {
+            print("error decoding data")
+        }
+        
+       return (nil, nil)
+    }
+    
     func downloadImage(url: String) async -> (Data?, URLResponse?) {
         do {
             let (data, response) = try await urlSession.data(from: URL(string: url)!)
@@ -82,4 +99,6 @@ struct PhotoProvider: RequestProvider, ImageProvider {
         }
         return (nil, nil)
     }
+    
+    
 }
