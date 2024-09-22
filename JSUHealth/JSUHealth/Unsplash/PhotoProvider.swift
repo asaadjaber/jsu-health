@@ -47,7 +47,7 @@ struct PhotoProvider: RequestProvider, ImageProvider {
     func request(from urlRequest: URLRequest) async -> (Data?, URLResponse?) {
         do {
             let (data, response) = try await urlSession.data(for: urlRequest)
-            let statusCode = (response as! HTTPURLResponse).statusCode
+            let statusCode = (response as? HTTPURLResponse)?.statusCode
             guard statusCode == 200 else { return (nil, response)}
             print(String(data: data, encoding: .utf8)!)
             return (data, response)
@@ -91,7 +91,7 @@ struct PhotoProvider: RequestProvider, ImageProvider {
     func downloadImage(url: String) async -> (Data?, URLResponse?) {
         do {
             let (data, response) = try await urlSession.data(from: URL(string: url)!)
-            let statusCode = (response as! HTTPURLResponse).statusCode
+            let statusCode = (response as? HTTPURLResponse)?.statusCode
             guard statusCode == 200 else { return (nil, response)}
             return (data, response)
         } catch {
