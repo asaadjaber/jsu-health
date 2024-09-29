@@ -30,6 +30,6 @@ final class JSUHealthUITests: XCTestCase {
         let procedurePriceLabel = app.descendants(matching: .staticText).element(matching: .staticText, identifier: "procedure-card-price-label")
         
         XCTAssertTrue(procedurePriceLabel.exists)
-        XCTAssertEqual(procedurePriceLabel.label, "From $15000")
+        XCTAssertEqual(procedurePriceLabel.label, "From $15000")        
     }
 }

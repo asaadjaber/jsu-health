@@ -11,7 +11,8 @@ import SnapKit
 
 class ClinicCell: UICollectionViewCell {
     var imageView: UIImageView!
-    var locationLabel: UILabel!
+    var locationView: UIView!
+    var nameLabel: UIView!
     
     static let reuseIdentifier = "clinic-cell-reuse-identifier"
     
@@ -21,8 +22,22 @@ class ClinicCell: UICollectionViewCell {
     }
     
     func setUp(with card: ClinicCard) {
-        locationLabel.text = "Turkey, \(card.location)"
-        locationLabel.accessibilityIdentifier = "clinic-card-location-label"
+        locationView.accessibilityIdentifier = "clinic-card-location-label"
+        
+        contentView.addSubview(locationView)
+        
+        locationView.snp.makeConstraints { make in
+            make.bottom.equalTo(contentView).inset(10)
+            make.leading.equalTo(contentView).inset(10)
+        }
+        
+        nameLabel.accessibilityIdentifier = "clinic-name-label"
+        contentView.addSubview(nameLabel)
+        
+        nameLabel.snp.makeConstraints { make in
+            make.leading.equalTo(contentView).inset(10)
+            make.top.equalTo(contentView).inset(10)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -33,20 +48,14 @@ class ClinicCell: UICollectionViewCell {
 extension ClinicCell {
     func configure() {
         imageView = UIImageView()
-        locationLabel = UILabel()
         
         contentView.addSubview(imageView)
-        contentView.addSubview(locationLabel)
 
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
+        
         imageView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
-        }
-        
-        let inset = CGFloat(15)
-        
-        locationLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(contentView).inset(inset)
-            make.bottom.equalTo(contentView).inset(-inset)
         }
     }
 }

@@ -21,9 +21,14 @@ final class ProcedureCardViewModelTests: XCTestCase {
     func testViewModel() {
         let viewModel = ProcedureCardViewModel()
         
-        XCTAssertEqual(viewModel.procedures[0].imageName, "plastic surgery")
-        XCTAssertEqual(viewModel.procedures[0].price, 15000)
-        XCTAssertTrue(viewModel.procedures[0].procedures.contains("rhinoplasty"))
-
+        let item = viewModel.procedures[0]
+        switch item {
+        case .procedureCard(let procedureCard):
+            XCTAssertEqual(procedureCard.imageName, "plastic surgery")
+            XCTAssertEqual(procedureCard.price, 15000)
+            XCTAssertTrue(procedureCard.procedures.contains("rhinoplasty"))
+        case .clinicCard(_):
+            ()
+        }
     }
 }

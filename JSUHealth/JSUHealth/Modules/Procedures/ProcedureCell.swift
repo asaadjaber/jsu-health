@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 import SnapKit
+import SwiftUI
 
 class ProcedureCell: UICollectionViewCell {
-    let priceLabel = UILabel()
+    
     let imageView = UIImageView()
     var proceduresLabelCollectionView: UICollectionView!
+    var priceTextView: UIView?
+    var procedureLabelsView: UIView?
     
     static let reuseIdentifier = "procedure-cell-reuse-identifier"
     
@@ -22,8 +25,28 @@ class ProcedureCell: UICollectionViewCell {
     }
     
     func setUp(with card: ProcedureCard) {
-        priceLabel.text = "From $\(card.price)"
-        priceLabel.accessibilityIdentifier = "procedure-card-price-label"
+        
+        if priceTextView != nil, let priceTextView = priceTextView {
+            contentView.addSubview(priceTextView)
+            priceTextView.accessibilityIdentifier = "procedure-card-price-label"
+            priceTextView.snp.makeConstraints { make in
+                make.top.equalTo(contentView).offset(10)
+                make.right.equalTo(contentView).offset(-10)
+            }
+        }
+        
+        if let procedureLabelsView = procedureLabelsView {
+            contentView.addSubview(procedureLabelsView)
+            
+            procedureLabelsView.translatesAutoresizingMaskIntoConstraints = false
+            
+            procedureLabelsView.snp.makeConstraints { make in
+                make.leading.equalTo(contentView).offset(10)
+                make.bottom.equalTo(contentView).offset(-10)
+            }
+            
+        }
+        
     }
     
     required init?(coder: NSCoder) {
@@ -37,21 +60,11 @@ extension ProcedureCell {
         imageView.contentMode = .scaleAspectFill
         
         contentView.addSubview(imageView)
-        contentView.addSubview(priceLabel)
         contentView.layer.cornerRadius = 20
         
-        priceLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        let inset = CGFloat(10)
-        
-        NSLayoutConstraint.activate([
-            
-        ])
-        
-        priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(inset)
-            make.right.equalTo(contentView).offset(-inset)
-        }
-        
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
+                        
         imageView.snp.makeConstraints { make in
             make.edges.equalTo(contentView)
         }

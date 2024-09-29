@@ -11,11 +11,16 @@
 		4E3DA7972C9AE973005B12F7 /* PhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7962C9AE973005B12F7 /* PhotoProvider.swift */; };
 		4E3DA7992C9AF1BB005B12F7 /* GetPhotoRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7982C9AF1BB005B12F7 /* GetPhotoRequestTests.swift */; };
 		4E3DA79B2C9B06E9005B12F7 /* MockPhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA79A2C9B06E9005B12F7 /* MockPhotoProvider.swift */; };
-		4E3DA79D2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */; };
-		4E3DA79E2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */; };
 		4E3DA7A42C9C43EF005B12F7 /* ClinicCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7A32C9C43EF005B12F7 /* ClinicCardViewModel.swift */; };
 		4E3DA7A62C9C440D005B12F7 /* ClinicCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7A52C9C440D005B12F7 /* ClinicCard.swift */; };
 		4E3DA7A82C9C4AFB005B12F7 /* ClinicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7A72C9C4AFB005B12F7 /* ClinicCell.swift */; };
+		4E3DA7AA2CA19C71005B12F7 /* ProceduresHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA7A92CA19C71005B12F7 /* ProceduresHeaderView.swift */; };
+		4E3DA80C2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E3DA80B2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf */; };
+		4E3DA80F2CA46964005B12F7 /* CaptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA80E2CA46964005B12F7 /* CaptionTextView.swift */; };
+		4E3DA8112CA47622005B12F7 /* ProcedureLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8102CA47622005B12F7 /* ProcedureLabelsView.swift */; };
+		4E3DA8152CA68D34005B12F7 /* ClinicLocationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8142CA68D34005B12F7 /* ClinicLocationTitleView.swift */; };
+		4E3DA8172CA6925A005B12F7 /* ClinicCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8162CA6925A005B12F7 /* ClinicCardUITests.swift */; };
+		4E3DA81A2CA82F10005B12F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8192CA82F10005B12F7 /* TabBarController.swift */; };
 		4EECBA7F2C98142100335FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA7E2C98142100335FF4 /* AppDelegate.swift */; };
 		4EECBA812C98142100335FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA802C98142100335FF4 /* SceneDelegate.swift */; };
 		4EECBA832C98142100335FF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA822C98142100335FF4 /* HomeViewController.swift */; };
@@ -29,7 +34,6 @@
 		4EECBABB2C98479C00335FF4 /* ProcedureCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */; };
 		4EECBABE2C984B8700335FF4 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */; };
 		4EECBABF2C984B8700335FF4 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4EECBAC22C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBAC12C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +72,16 @@
 		4E3DA7962C9AE973005B12F7 /* PhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProvider.swift; sourceTree = "<group>"; };
 		4E3DA7982C9AF1BB005B12F7 /* GetPhotoRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPhotoRequestTests.swift; sourceTree = "<group>"; };
 		4E3DA79A2C9B06E9005B12F7 /* MockPhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPhotoProvider.swift; sourceTree = "<group>"; };
-		4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
 		4E3DA7A32C9C43EF005B12F7 /* ClinicCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicCardViewModel.swift; sourceTree = "<group>"; };
 		4E3DA7A52C9C440D005B12F7 /* ClinicCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicCard.swift; sourceTree = "<group>"; };
 		4E3DA7A72C9C4AFB005B12F7 /* ClinicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicCell.swift; sourceTree = "<group>"; };
+		4E3DA7A92CA19C71005B12F7 /* ProceduresHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceduresHeaderView.swift; sourceTree = "<group>"; };
+		4E3DA80B2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Rounded-Bold.ttf"; sourceTree = "<group>"; };
+		4E3DA80E2CA46964005B12F7 /* CaptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionTextView.swift; sourceTree = "<group>"; };
+		4E3DA8102CA47622005B12F7 /* ProcedureLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureLabelsView.swift; sourceTree = "<group>"; };
+		4E3DA8142CA68D34005B12F7 /* ClinicLocationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicLocationTitleView.swift; sourceTree = "<group>"; };
+		4E3DA8162CA6925A005B12F7 /* ClinicCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicCardUITests.swift; sourceTree = "<group>"; };
+		4E3DA8192CA82F10005B12F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4EECBA7B2C98142100335FF4 /* JSUHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSUHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EECBA7E2C98142100335FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EECBA802C98142100335FF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +98,6 @@
 		4EECBAB62C9824CE00335FF4 /* ProcedureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCell.swift; sourceTree = "<group>"; };
 		4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCardViewModel.swift; sourceTree = "<group>"; };
 		4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
-		4EECBAC12C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSUHealthUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +106,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EECBABE2C984B8700335FF4 /* SnapKit.xcframework in Frameworks */,
-				4E3DA79D2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3DA79E2C9B0DA7005B12F7 /* SwiftyJSON.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +142,24 @@
 				4E3DA7A72C9C4AFB005B12F7 /* ClinicCell.swift */,
 			);
 			path = Clinics;
+			sourceTree = "<group>";
+		};
+		4E3DA80D2CA46952005B12F7 /* AncillaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				4E3DA80E2CA46964005B12F7 /* CaptionTextView.swift */,
+				4E3DA8102CA47622005B12F7 /* ProcedureLabelsView.swift */,
+				4E3DA8142CA68D34005B12F7 /* ClinicLocationTitleView.swift */,
+			);
+			path = AncillaryViews;
+			sourceTree = "<group>";
+		};
+		4E3DA8182CA82F03005B12F7 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				4E3DA8192CA82F10005B12F7 /* TabBarController.swift */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		4EECBA722C98142100335FF4 = {
@@ -167,7 +192,9 @@
 				4EECBAB42C9824B800335FF4 /* Modules */,
 				4EECBAB32C981A4F00335FF4 /* Model */,
 				4E3DA7932C9AE4FF005B12F7 /* Unsplash */,
+				4E3DA80D2CA46952005B12F7 /* AncillaryViews */,
 				4EECBA872C98142400335FF4 /* Assets.xcassets */,
+				4E3DA80B2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf */,
 				4EECBA892C98142400335FF4 /* LaunchScreen.storyboard */,
 				4EECBA8C2C98142400335FF4 /* Info.plist */,
 			);
@@ -188,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				4EECBA9F2C98142400335FF4 /* ProcedureCardUITests.swift */,
-				4EECBAC12C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift */,
+				4E3DA8162CA6925A005B12F7 /* ClinicCardUITests.swift */,
 			);
 			path = JSUHealthUITests;
 			sourceTree = "<group>";
@@ -213,6 +240,7 @@
 		4EECBAB42C9824B800335FF4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4E3DA8182CA82F03005B12F7 /* TabBarController */,
 				4E3DA7A22C9C43C9005B12F7 /* Clinics */,
 				4EECBAB52C9824BE00335FF4 /* Procedures */,
 			);
@@ -225,6 +253,7 @@
 				4EECBA822C98142100335FF4 /* HomeViewController.swift */,
 				4EECBAB62C9824CE00335FF4 /* ProcedureCell.swift */,
 				4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */,
+				4E3DA7A92CA19C71005B12F7 /* ProceduresHeaderView.swift */,
 			);
 			path = Procedures;
 			sourceTree = "<group>";
@@ -233,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */,
-				4E3DA79C2C9B0DA6005B12F7 /* SwiftyJSON.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EECBA882C98142400335FF4 /* Assets.xcassets in Resources */,
+				4E3DA80C2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf in Resources */,
 				4EECBA8B2C98142400335FF4 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,16 +398,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3DA8152CA68D34005B12F7 /* ClinicLocationTitleView.swift in Sources */,
 				4E3DA7A62C9C440D005B12F7 /* ClinicCard.swift in Sources */,
 				4E3DA7A82C9C4AFB005B12F7 /* ClinicCell.swift in Sources */,
 				4E3DA7952C9AE50E005B12F7 /* Schema.swift in Sources */,
 				4E3DA7972C9AE973005B12F7 /* PhotoProvider.swift in Sources */,
+				4E3DA7AA2CA19C71005B12F7 /* ProceduresHeaderView.swift in Sources */,
+				4E3DA81A2CA82F10005B12F7 /* TabBarController.swift in Sources */,
 				4EECBABB2C98479C00335FF4 /* ProcedureCardViewModel.swift in Sources */,
 				4EECBAB02C98147B00335FF4 /* AppCoordinator.swift in Sources */,
 				4E3DA7A42C9C43EF005B12F7 /* ClinicCardViewModel.swift in Sources */,
+				4E3DA8112CA47622005B12F7 /* ProcedureLabelsView.swift in Sources */,
 				4EECBAB72C9824CF00335FF4 /* ProcedureCell.swift in Sources */,
 				4EECBA832C98142100335FF4 /* HomeViewController.swift in Sources */,
 				4EECBAB22C981A4700335FF4 /* ProcedureCard.swift in Sources */,
+				4E3DA80F2CA46964005B12F7 /* CaptionTextView.swift in Sources */,
 				4EECBA7F2C98142100335FF4 /* AppDelegate.swift in Sources */,
 				4EECBA812C98142100335FF4 /* SceneDelegate.swift in Sources */,
 			);
@@ -398,8 +432,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E3DA8172CA6925A005B12F7 /* ClinicCardUITests.swift in Sources */,
 				4EECBAA02C98142400335FF4 /* ProcedureCardUITests.swift in Sources */,
-				4EECBAC22C998C9100335FF4 /* JSUHealthUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

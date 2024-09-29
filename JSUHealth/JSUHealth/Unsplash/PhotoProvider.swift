@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 protocol RequestProvider {
     func request(from: URLRequest) async -> (Data?, URLResponse?)

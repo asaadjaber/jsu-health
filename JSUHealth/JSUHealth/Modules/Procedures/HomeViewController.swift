@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum Item: Hashable {
     case procedureCard(ProcedureCard)
@@ -17,14 +18,22 @@ class HomeViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>! = nil
     var collectionView: UICollectionView! = nil
     
+    var priceTextViewController: UIViewController!
+    
     var procedureViewModel: ProcedureCardViewModel!
     var clinicViewModel: ClinicCardViewModel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "JSU Health"
         configureHierarchy()
         configureDataSource()
+        
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+
     }
 }
 
@@ -46,56 +55,42 @@ extension HomeViewController {
         let sectionProvider = { [weak self] (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             
             guard let sectionKind = Section(rawValue: sectionIndex) else { return nil }
-        
+            
             let section: NSCollectionLayoutSection
             
-            if sectionKind == .procedures {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(1.0))
-                            
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(300),
-                                                       heightDimension: .absolute(300))
-                
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                               subitems: [item])
-                            
-                section = NSCollectionLayoutSection(group: group)
-                
-                section.interGroupSpacing = 16
-                
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-                
-                section.orthogonalScrollingBehavior = .continuous
-            } else if sectionKind == .clinics {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(1.0))
-                
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
-                let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(300),
-                                                       heightDimension: .absolute(300))
-                
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                               subitems: [item])
-                
-                section = NSCollectionLayoutSection(group: group)
-                
-                section.interGroupSpacing = 16
-                
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
-                
-                section.orthogonalScrollingBehavior = .continuous
-            } else {
-                fatalError("Uknown section!")
-            }
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                  heightDimension: .fractionalHeight(1.0))
+            
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200),
+                                                   heightDimension: .absolute(200))
+            
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                           subitems: [item])
+            
+            section = NSCollectionLayoutSection(group: group)
+            
+            section.interGroupSpacing = 16
+            
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+            
+            section.orthogonalScrollingBehavior = .groupPaging
+            
+            let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50))
+            
+            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize,
+                                                                    elementKind: "section-header-element-kind",
+                                                                    alignment: .top)
+            
+            section.boundarySupplementaryItems = [sectionHeader]
+            
             return section
         }
-        
         return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
     }
 }
+
 
 extension HomeViewController {
         
@@ -111,6 +106,18 @@ extension HomeViewController {
         return UICollectionView.CellRegistration<ProcedureCell, Item> { [self] (cell, indexPath, item) in
             switch item {
             case .procedureCard(let procedureCard):
+                let priceTextViewController = UIHostingController(rootView: CaptionTextView(title: "From $\(String(procedureCard.price))", cellSize: cell.frame.size))
+                priceTextViewController.view.backgroundColor = .clear
+                addChild(priceTextViewController)
+                priceTextViewController.didMove(toParent: self)
+                cell.priceTextView = priceTextViewController.view
+
+                let procedureLabelsViewController = UIHostingController(rootView: ProcedureLabelsView(procedures: procedureCard.procedures, size: cell.frame.size, title: procedureCard.imageName))
+                procedureLabelsViewController.view.backgroundColor = .clear
+                addChild(priceTextViewController)
+                procedureLabelsViewController.didMove(toParent: self)
+                cell.procedureLabelsView = procedureLabelsViewController.view
+
                 cell.setUp(with: procedureCard)
                 Task {
                     let (data, response) = await procedureViewModel.makeImageQuery(query: procedureCard.imageName)
@@ -135,6 +142,18 @@ extension HomeViewController {
             case .procedureCard(_):
                 break
             case .clinicCard(let clinicCard):
+                let viewController = UIHostingController(rootView: ClinicLocationTitleView(location: clinicCard.location))
+                cell.locationView = viewController.view
+                viewController.view.backgroundColor = .clear
+                self.addChild(viewController)
+                viewController.didMove(toParent: self)
+                
+                let captionViewController = UIHostingController(rootView: CaptionTextView(title: clinicCard.name, cellSize: cell.frame.size))
+                cell.nameLabel = captionViewController.view
+                captionViewController.view.backgroundColor = .clear
+                self.addChild(captionViewController)
+                captionViewController.didMove(toParent: self)
+                
                 cell.setUp(with: clinicCard)
                 Task {
                     let (data, response) = await procedureViewModel.makeImageQuery(query: clinicCard.imageName)
@@ -151,10 +170,21 @@ extension HomeViewController {
         }
     }
     
+    func createHeaderRegistration() -> UICollectionView.SupplementaryRegistration<ProceduresHeaderView> {
+        let headerRegistration = UICollectionView.SupplementaryRegistration
+        <ProceduresHeaderView>(elementKind: "section-header-element-kind") {
+            (supplementaryView, string, indexPath) in
+            supplementaryView.sectionIndex = indexPath.section
+            supplementaryView.setupView(with: Section.allCases[indexPath.section].description)
+        }
+        return headerRegistration
+    }
+    
     func configureDataSource() {
         
         let procedureCellRegistration = createProcedureCellRegistration()
         let clinicCellRegistration = createClinicCellRegistration()
+        let headerRegistration = createHeaderRegistration()
         
         // data source
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView) {
@@ -164,10 +194,18 @@ extension HomeViewController {
             
             switch section {
             case .procedures:
-                return collectionView.dequeueConfiguredReusableCell(using: procedureCellRegistration, for: indexPath, item: item)
+                let cell = collectionView.dequeueConfiguredReusableCell(using: procedureCellRegistration, for: indexPath, item: item)
+                return cell
             case .clinics:
-                return collectionView.dequeueConfiguredReusableCell(using: clinicCellRegistration, for: indexPath, item: item)
+                let cell = collectionView.dequeueConfiguredReusableCell(using: clinicCellRegistration, for: indexPath, item: item)
+                return cell
             }
+        }
+        
+        dataSource.supplementaryViewProvider = { (view, kind, index) in
+            let cell = self.collectionView.dequeueConfiguredReusableSupplementary(
+                using: headerRegistration, for: index)
+            return cell
         }
         
         // set the order of our sections
