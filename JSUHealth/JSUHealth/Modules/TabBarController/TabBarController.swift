@@ -16,14 +16,32 @@ class TabBarController: UITabBarController {
     
     func configureTabs() {
         let viewController = HomeViewController()
-        viewController.title = "Clinics"
-        viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        self.tabBar.backgroundColor = .white
+        
+        let tabBarItem = UITabBarItem(title: "Clinics", image: UIImage(named: "medical-clinic")!, tag: 0)
+
+        viewController.tabBarItem = tabBarItem
+
         let clinicViewModel = ClinicCardViewModel()
+        tabBar.isTranslucent = false
+        tabBar.tintColor = Colors.navyBlue
+        tabBar.unselectedItemTintColor = .gray
         
         viewController.procedureViewModel = ProcedureCardViewModel()
         viewController.clinicViewModel = clinicViewModel
         
-        viewControllers?.append(viewController)
+        let doctorClinicViewModel = DoctorClinicViewModel()
+        let plannerViewController = PlannerViewController(doctorClinicViewModel: doctorClinicViewModel)
+        
+        let plannerTabBarItem = UITabBarItem(title: "Planner", image: UIImage(named: "planner-icon")!, tag: 1)
+        plannerViewController.tabBarItem = plannerTabBarItem
+        
+        self.setViewControllers([viewController, plannerViewController], animated: true)
+        viewControllers?.removeAll()
+        viewControllers?.insert(viewController, at: 0)
+        viewControllers?.insert(plannerViewController, at: 1)
+
+        self.selectedViewController = viewController
     }
 }
 

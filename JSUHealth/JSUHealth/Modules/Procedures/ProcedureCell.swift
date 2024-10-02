@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SnapKit
+//import SnapKit
 import SwiftUI
 
 class ProcedureCell: UICollectionViewCell {
@@ -28,11 +28,17 @@ class ProcedureCell: UICollectionViewCell {
         
         if priceTextView != nil, let priceTextView = priceTextView {
             contentView.addSubview(priceTextView)
+            priceTextView.translatesAutoresizingMaskIntoConstraints = false
             priceTextView.accessibilityIdentifier = "procedure-card-price-label"
-            priceTextView.snp.makeConstraints { make in
-                make.top.equalTo(contentView).offset(10)
-                make.right.equalTo(contentView).offset(-10)
-            }
+//            priceTextView.snp.makeConstraints { make in
+//                make.top.equalTo(contentView).offset(10)
+//                make.right.equalTo(contentView).offset(-10)
+//            }
+            
+            NSLayoutConstraint.activate([
+                priceTextView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+                priceTextView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+            ])
         }
         
         if let procedureLabelsView = procedureLabelsView {
@@ -40,13 +46,16 @@ class ProcedureCell: UICollectionViewCell {
             
             procedureLabelsView.translatesAutoresizingMaskIntoConstraints = false
             
-            procedureLabelsView.snp.makeConstraints { make in
-                make.leading.equalTo(contentView).offset(10)
-                make.bottom.equalTo(contentView).offset(-10)
-            }
+//            procedureLabelsView.snp.makeConstraints { make in
+//                make.leading.equalTo(contentView).offset(10)
+//                make.bottom.equalTo(contentView).offset(-10)
+//            }
             
+            NSLayoutConstraint.activate([
+                procedureLabelsView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+                procedureLabelsView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            ])
         }
-        
     }
     
     required init?(coder: NSCoder) {
@@ -64,9 +73,18 @@ extension ProcedureCell {
         
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
-                        
-        imageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
-        }
+               
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        ])
+        
+//        imageView.snp.makeConstraints { make in
+//            make.edges.equalTo(contentView)
+//        }
     }
 }

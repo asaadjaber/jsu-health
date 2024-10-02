@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SnapKit
+//import SnapKit
 
 class ProceduresHeaderView: UICollectionReusableView {
     let label = UILabel()
@@ -47,17 +47,29 @@ extension ProceduresHeaderView {
         border.backgroundColor = .black
         
         self.addSubview(label)
-                
-        label.snp.makeConstraints { make in
-            make.leading.equalTo(self).inset(10)
-            make.centerY.equalTo(self)
-        }
+           
+        border.translatesAutoresizingMaskIntoConstraints = false
         
-        border.snp.makeConstraints { make in
-            make.leading.equalTo(self).inset(3)
-            make.width.equalTo(UIScreen.main.bounds.width)
-            make.top.equalTo(self).inset(10)
-            make.height.equalTo(1)
-        }
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            label.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            border.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 3),
+            border.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            border.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            border.heightAnchor.constraint(equalToConstant: 1)
+        ])
+        
+//        label.snp.makeConstraints { make in
+//            make.leading.equalTo(self).inset(10)
+//            make.centerY.equalTo(self)
+//        }
+        
+//        border.snp.makeConstraints { make in
+//            make.leading.equalTo(self).inset(3)
+//            make.width.equalTo(UIScreen.main.bounds.width)
+//            make.top.equalTo(self).inset(10)
+//            make.height.equalTo(1)
+//        }
     }
 }

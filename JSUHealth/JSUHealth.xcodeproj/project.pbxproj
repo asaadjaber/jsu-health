@@ -21,6 +21,14 @@
 		4E3DA8152CA68D34005B12F7 /* ClinicLocationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8142CA68D34005B12F7 /* ClinicLocationTitleView.swift */; };
 		4E3DA8172CA6925A005B12F7 /* ClinicCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8162CA6925A005B12F7 /* ClinicCardUITests.swift */; };
 		4E3DA81A2CA82F10005B12F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3DA8192CA82F10005B12F7 /* TabBarController.swift */; };
+		4EE9AA1E2CAD9BA7002C51CE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA1D2CAD9BA1002C51CE /* Colors.swift */; };
+		4EE9AA212CAD9D26002C51CE /* PlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA202CAD9D1C002C51CE /* PlannerViewController.swift */; };
+		4EE9AA232CAD9DDA002C51CE /* DoctorClinicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA222CAD9DD6002C51CE /* DoctorClinicViewModel.swift */; };
+		4EE9AA252CAD9DEE002C51CE /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA242CAD9DEC002C51CE /* Doctor.swift */; };
+		4EE9AA272CAD9E5C002C51CE /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA262CAD9E5B002C51CE /* Clinic.swift */; };
+		4EE9AA292CADAAAA002C51CE /* Futura-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EE9AA282CADAAAA002C51CE /* Futura-Normal.ttf */; };
+		4EE9AA2B2CADB2E1002C51CE /* PlannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA2A2CADB2DB002C51CE /* PlannerCell.swift */; };
+		4EE9AA2D2CADCBD8002C51CE /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE9AA2C2CADCBD6002C51CE /* HeaderCell.swift */; };
 		4EECBA7F2C98142100335FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA7E2C98142100335FF4 /* AppDelegate.swift */; };
 		4EECBA812C98142100335FF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA802C98142100335FF4 /* SceneDelegate.swift */; };
 		4EECBA832C98142100335FF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBA822C98142100335FF4 /* HomeViewController.swift */; };
@@ -32,8 +40,6 @@
 		4EECBAB22C981A4700335FF4 /* ProcedureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBAB12C981A4700335FF4 /* ProcedureCard.swift */; };
 		4EECBAB72C9824CF00335FF4 /* ProcedureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBAB62C9824CE00335FF4 /* ProcedureCell.swift */; };
 		4EECBABB2C98479C00335FF4 /* ProcedureCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */; };
-		4EECBABE2C984B8700335FF4 /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */; };
-		4EECBABF2C984B8700335FF4 /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +66,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4EECBABF2C984B8700335FF4 /* SnapKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +87,14 @@
 		4E3DA8142CA68D34005B12F7 /* ClinicLocationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicLocationTitleView.swift; sourceTree = "<group>"; };
 		4E3DA8162CA6925A005B12F7 /* ClinicCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicCardUITests.swift; sourceTree = "<group>"; };
 		4E3DA8192CA82F10005B12F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4EE9AA1D2CAD9BA1002C51CE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4EE9AA202CAD9D1C002C51CE /* PlannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerViewController.swift; sourceTree = "<group>"; };
+		4EE9AA222CAD9DD6002C51CE /* DoctorClinicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorClinicViewModel.swift; sourceTree = "<group>"; };
+		4EE9AA242CAD9DEC002C51CE /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		4EE9AA262CAD9E5B002C51CE /* Clinic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
+		4EE9AA282CADAAAA002C51CE /* Futura-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura-Normal.ttf"; sourceTree = "<group>"; };
+		4EE9AA2A2CADB2DB002C51CE /* PlannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerCell.swift; sourceTree = "<group>"; };
+		4EE9AA2C2CADCBD6002C51CE /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		4EECBA7B2C98142100335FF4 /* JSUHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSUHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EECBA7E2C98142100335FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EECBA802C98142100335FF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +110,6 @@
 		4EECBAB12C981A4700335FF4 /* ProcedureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCard.swift; sourceTree = "<group>"; };
 		4EECBAB62C9824CE00335FF4 /* ProcedureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCell.swift; sourceTree = "<group>"; };
 		4EECBABA2C98479C00335FF4 /* ProcedureCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureCardViewModel.swift; sourceTree = "<group>"; };
-		4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +117,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EECBABE2C984B8700335FF4 /* SnapKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +173,17 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
+		4EE9AA1F2CAD9D16002C51CE /* Planner */ = {
+			isa = PBXGroup;
+			children = (
+				4EE9AA2C2CADCBD6002C51CE /* HeaderCell.swift */,
+				4EE9AA2A2CADB2DB002C51CE /* PlannerCell.swift */,
+				4EE9AA222CAD9DD6002C51CE /* DoctorClinicViewModel.swift */,
+				4EE9AA202CAD9D1C002C51CE /* PlannerViewController.swift */,
+			);
+			path = Planner;
+			sourceTree = "<group>";
+		};
 		4EECBA722C98142100335FF4 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +215,8 @@
 				4EECBAB32C981A4F00335FF4 /* Model */,
 				4E3DA7932C9AE4FF005B12F7 /* Unsplash */,
 				4E3DA80D2CA46952005B12F7 /* AncillaryViews */,
+				4EE9AA1D2CAD9BA1002C51CE /* Colors.swift */,
+				4EE9AA282CADAAAA002C51CE /* Futura-Normal.ttf */,
 				4EECBA872C98142400335FF4 /* Assets.xcassets */,
 				4E3DA80B2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf */,
 				4EECBA892C98142400335FF4 /* LaunchScreen.storyboard */,
@@ -231,6 +255,8 @@
 		4EECBAB32C981A4F00335FF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4EE9AA262CAD9E5B002C51CE /* Clinic.swift */,
+				4EE9AA242CAD9DEC002C51CE /* Doctor.swift */,
 				4EECBAB12C981A4700335FF4 /* ProcedureCard.swift */,
 				4E3DA7A52C9C440D005B12F7 /* ClinicCard.swift */,
 			);
@@ -240,6 +266,7 @@
 		4EECBAB42C9824B800335FF4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4EE9AA1F2CAD9D16002C51CE /* Planner */,
 				4E3DA8182CA82F03005B12F7 /* TabBarController */,
 				4E3DA7A22C9C43C9005B12F7 /* Clinics */,
 				4EECBAB52C9824BE00335FF4 /* Procedures */,
@@ -261,7 +288,6 @@
 		4EECBABC2C984B8700335FF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EECBABD2C984B8700335FF4 /* SnapKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -373,6 +399,7 @@
 			files = (
 				4EECBA882C98142400335FF4 /* Assets.xcassets in Resources */,
 				4E3DA80C2CA45EBE005B12F7 /* Gotham-Rounded-Bold.ttf in Resources */,
+				4EE9AA292CADAAAA002C51CE /* Futura-Normal.ttf in Resources */,
 				4EECBA8B2C98142400335FF4 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +426,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3DA8152CA68D34005B12F7 /* ClinicLocationTitleView.swift in Sources */,
+				4EE9AA1E2CAD9BA7002C51CE /* Colors.swift in Sources */,
+				4EE9AA212CAD9D26002C51CE /* PlannerViewController.swift in Sources */,
 				4E3DA7A62C9C440D005B12F7 /* ClinicCard.swift in Sources */,
+				4EE9AA2D2CADCBD8002C51CE /* HeaderCell.swift in Sources */,
 				4E3DA7A82C9C4AFB005B12F7 /* ClinicCell.swift in Sources */,
 				4E3DA7952C9AE50E005B12F7 /* Schema.swift in Sources */,
 				4E3DA7972C9AE973005B12F7 /* PhotoProvider.swift in Sources */,
@@ -412,9 +442,13 @@
 				4EECBAB72C9824CF00335FF4 /* ProcedureCell.swift in Sources */,
 				4EECBA832C98142100335FF4 /* HomeViewController.swift in Sources */,
 				4EECBAB22C981A4700335FF4 /* ProcedureCard.swift in Sources */,
+				4EE9AA2B2CADB2E1002C51CE /* PlannerCell.swift in Sources */,
 				4E3DA80F2CA46964005B12F7 /* CaptionTextView.swift in Sources */,
 				4EECBA7F2C98142100335FF4 /* AppDelegate.swift in Sources */,
 				4EECBA812C98142100335FF4 /* SceneDelegate.swift in Sources */,
+				4EE9AA232CAD9DDA002C51CE /* DoctorClinicViewModel.swift in Sources */,
+				4EE9AA252CAD9DEE002C51CE /* Doctor.swift in Sources */,
+				4EE9AA272CAD9E5C002C51CE /* Clinic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +631,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +659,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
