@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 
 protocol Coordinator {
-    var navigationController: UINavigationController { get set }
-    func start()
+    var navigationController: UINavigationController? { get set }
+    func start(navigationController: UINavigationController)
 }
 
 class AppCoordinator: Coordinator {
-    var navigationController: UINavigationController
-    
+    var navigationController: UINavigationController?
+        
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func start() {
+    func start(navigationController: UINavigationController) {
         let viewController = HomeViewController()
         navigationController.pushViewController(viewController, animated: false)
     }

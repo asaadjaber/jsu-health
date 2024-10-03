@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class TabBarController: UITabBarController {
-    
+        
     override func viewDidLoad() {
         configureTabs()
     }
@@ -31,8 +31,8 @@ class TabBarController: UITabBarController {
         viewController.clinicViewModel = clinicViewModel
         
         let doctorClinicViewModel = DoctorClinicViewModel()
-        let plannerViewController = PlannerViewController(doctorClinicViewModel: doctorClinicViewModel)
-        
+        let plannerViewController = PlannerViewController(doctorClinicViewModel: doctorClinicViewModel, coordinator: CalendarCoordinator(navigationController: nil, item: nil))
+               
         let plannerTabBarItem = UITabBarItem(title: "Planner", image: UIImage(named: "planner-icon")!, tag: 1)
         plannerViewController.tabBarItem = plannerTabBarItem
         

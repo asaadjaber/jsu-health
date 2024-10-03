@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         viewController.procedureViewModel = ProcedureCardViewModel()
         viewController.clinicViewModel = clinicViewModel
         
-        let navigationController = UINavigationController(rootViewController: TabBarController())
+        let tabBarController = TabBarController()
+        let navigationController = UINavigationController(rootViewController: tabBarController)
         navigationController.title = "JSU"
         navigationController.navigationBar.backgroundColor = .white
         

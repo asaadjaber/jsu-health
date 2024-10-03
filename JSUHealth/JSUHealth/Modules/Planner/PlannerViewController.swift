@@ -9,12 +9,14 @@ class PlannerViewController: UIViewController {
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, PlannerItem>!
     private var collectionView: UICollectionView!
+    private var calendarCoordinator: CalendarCoordinator!
     
     override func viewDidLoad() {
         view.backgroundColor = .yellow
 
         self.collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: createLayout())
         collectionView.backgroundColor = #colorLiteral(red: 0.980392158, green: 0.980392158, blue: 0.980392158, alpha: 1)
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         
@@ -24,8 +26,9 @@ class PlannerViewController: UIViewController {
     
     private let doctorClinicViewModel: DoctorClinicViewModel
     
-    init(doctorClinicViewModel: DoctorClinicViewModel) {
+    init(doctorClinicViewModel: DoctorClinicViewModel, coordinator: CalendarCoordinator) {
         self.doctorClinicViewModel = doctorClinicViewModel
+        self.calendarCoordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -101,5 +104,12 @@ extension PlannerViewController {
         snapshot.appendItems(doctorClinicViewModel.items)
         
         dataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+extension PlannerViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        calendarCoordinator.item = doctorClinicViewModel.items[indexPath.row]
+        calendarCoordinator.start(navigationController: navigationController!)
     }
 }
