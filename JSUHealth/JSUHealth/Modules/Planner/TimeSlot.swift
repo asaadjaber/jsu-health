@@ -1,0 +1,3 @@
+struct TimeSlot: Hashable {
+    
+}

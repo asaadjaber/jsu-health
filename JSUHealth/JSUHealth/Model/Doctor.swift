@@ -1,6 +1,8 @@
 struct Doctor: Hashable {
     let name: String
     let practiceArea: PracticeArea
+    
+    var timeSlots: [TimeSlot]? = []
 }
 
 enum PracticeArea: String {

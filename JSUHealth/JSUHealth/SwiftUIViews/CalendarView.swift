@@ -1,8 +1,14 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State private var date = Date()
-
+    @State private var date = Date() {
+        didSet {
+            updatedDate?()
+        }
+    }
+    
+    var updatedDate: (() -> Void)?
+    
     var body: some View {
         DatePicker(
             "Start Date",
